@@ -1,0 +1,371 @@
+/* Movie Row Section */
+.movie-row {
+    padding: 10px 0;
+    padding-left: 60px;            /* Space for sidebar if needed */
+    background-color: #060117;      /* Dark Background */
+    overflow-x: auto;
+  }
+  
+  @media (max-width: 767px) {
+    .movie-row {
+      padding: 10px 0;
+      background-color: #060117;      /* Dark Background */
+      overflow-x: auto;
+    }
+  }
+
+  /* Row Title */
+  .row-title {
+    color: #c5b5f1;
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    padding-left: 16px;
+    font-weight: 800;
+  }
+  
+  /* Container holding all cards in horizontal scroll */
+  .movie-card3 {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+    padding: 10px 30px 10px 40px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;              /* Firefox */
+  -ms-overflow-style: none;           /* IE and Edge */
+  }
+  
+  /* Hide scrollbar for horizontal scroll (optional) */
+  .movie-card::-webkit-scrollbar {
+    display: none;   
+  }
+  .movie-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+  
+  /* Individual Big Card */
+  .big-card3 {
+    position: relative;
+    min-width: 280px;
+    height: 180px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #121212;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Slight scale on hover */
+  .big-card3:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Poster Image */
+  .card-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    transition: transform 0.4s ease;
+  }
+  
+  .card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Hover image zoom */
+  .big-card3:hover .card-image {
+    transform: scale(1.08);
+  }
+  
+  /* Gradient Overlay (hidden by default) */
+  
+  /* Show overlay on hover */
+  .big-card3:hover .card-gradient-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Title inside overlay */
+
+  
+
+  
+  /* Watchlist Button */
+  .watchlist-btn {
+    background-color: #212227;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .watchlist-btn i {
+    font-size: 1rem;
+  }
+  
+  .watchlist-btn:hover {
+    background-color: #2c2d33;
+    transform: scale(1.05);
+  }
+  /* Wrapper to hold both the scroll area and side gradients */
+.movie-card-wrapper {
+    position: relative;
+  }
+  
+  /* Scrollable movie card row */
+  .movie-card {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Hide default scrollbar (Optional) */
+  .movie-card::-webkit-scrollbar {
+    height: 6px;
+  }
+  .movie-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+  
+  /* Left Gradient Fade */
+  .scroll-fade-left,
+  .scroll-fade-right {
+    position: absolute;
+    top: 0;
+    width: 60px;              /* Width of the gradient fade */
+    height: 100%;
+    z-index: 30;
+    pointer-events: none;      /* Allow clicks to pass through */
+  }
+  
+  .scroll-fade-left {
+    left: 0;
+    background: linear-gradient(to right, #060117, transparent);
+  }
+  
+  .scroll-fade-right {
+    right: 0;
+    background: linear-gradient(to left, #060117, transparent);
+  }
+  /* Scroll buttons (left/right) */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 40;
+  transition: background 0.3s ease;
+}
+
+.scroll-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+/* Optional: Hide buttons on small screens (mobile) */
+@media (max-width: 768px) {
+  .scroll-button {
+    display: none;
+  }
+}
+
+ .landscape-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 14px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.movie-card::-webkit-scrollbar,
+.landscape-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==== Common Card Styles ==== */
+ .landscape-card {
+  position: relative;
+  min-width: 240px;
+  height: 340px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ==== Poster Image ==== */
+.card-image img,
+.landscape-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.landscape-card:hover {
+  min-width: 320px;
+  height: 340px;
+}
+
+.landscape-card:hover img {
+  transform: scale(1.1);
+}
+
+.hover-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(6, 1, 23, 0.95), transparent);
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.landscape-card:hover .hover-gradient {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landscape-title-text {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.landscape-watchlist-btn,
+.watchlist-btn {
+  background-color: #212227;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.landscape-watchlist-btn:hover,
+.watchlist-btn:hover {
+  background-color: #2c2d33;
+  transform: scale(1.05);
+}
+.hover-preview-card {
+  position: relative;
+  width: 160px;
+  height: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.hover-preview-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hover-video {
+  display: block;
+}
+
+.bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index:20;
+  }
+  
+  .progress-text {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    color: #00f0ff;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+    z-index:22;
+  }
+
+  .progress-bar-container {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #333, #444); /* ✅ Unfilled Part: Gray gradient */
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    z-index:23;
+    bottom:5;
+  }
+
+  .progress-bar-fill {
+    position: absolute;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(to right, #00f0ff, #ff00ff);
+    transition: width 0.6s ease-out;  /* Smooth fill effect */
+    z-index:23;
+  }
+  .delete-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index:23;
+  }
+  
+  .delete-icon:hover {
+    background: rgba(255, 0, 0, 0.8);
+  }

@@ -1,0 +1,37 @@
+.episode-thumbnail {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid yellow;
+    transition: transform 0.3s ease;
+  }
+  
+  .episode-thumbnail:hover {
+    transform: scale(1.05); /* ✅ Slight zoom on hover */
+  }
+  
+  .episode-thumbnail img {
+    transition: transform 0.3s ease;
+  }
+  
+  .episode-thumbnail:hover img {
+    transform: scale(1.1); /* ✅ Slight inner zoom effect */
+  }
+  
+  .episode-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .episode-thumbnail:hover .episode-overlay {
+    opacity: 1; /* ✅ Fade-in dark overlay on hover */
+  }
+  
